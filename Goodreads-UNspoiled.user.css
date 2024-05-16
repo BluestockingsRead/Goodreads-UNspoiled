@@ -1,0 +1,32 @@
+/* ==UserStyle==
+@name         GoodReads UNspoiled
+@version      1.1.1
+@namespace    url(https://bluestockingsread.com/)
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.goodreads.com/book/show/"), 
+                url-prefix("https://www.goodreads.com/en/book/show/"), 
+                url-prefix("https://www.goodreads.com/es/book/show/"), 
+                url-prefix("https://www.goodreads.com/it/book/show/"), 
+                url-prefix("https://www.goodreads.com/pt/book/show/"), 
+                url-prefix("https://www.goodreads.com/fr/book/show/")
+{
+  /* I've included the 5 most-used GoodReads url language codes. If needed, simply edit these to the language(s) of your choice. */
+
+  .Formatted .spoiler {
+    background-color: rgb(167, 167, 167);
+    /* blurred spoiler mask color */
+    color: rgb(167, 167, 167);
+    /* blurred text color */
+    filter: blur(0.7rem);
+    /* blur strength (original is 0.3) */
+    box-shadow: 10px 0 0 0 rgb(167, 167, 167),
+      /* Right side buffer */ -10px 0 0 0 rgb(167, 167, 167);
+    /* Left side buffer */
+  }
+
+  .Formatted .spoiler__control:checked + .spoiler {
+    box-shadow: none;
+    /* Removes box shadow when spoiler is revealed */
+  }
+}
